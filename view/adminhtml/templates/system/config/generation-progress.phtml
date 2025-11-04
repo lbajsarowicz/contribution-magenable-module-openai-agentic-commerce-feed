@@ -1,0 +1,16 @@
+<?php
+/** @var \Magenable\OpenAIAgenticCommerceFeed\Block\Adminhtml\System\Config\GenerationProgress $block */
+/** @var \Magento\Framework\Escaper $escaper */
+/** @var \Magenable\OpenAIAgenticCommerceFeed\ViewModel\GenerationProgress $viewModel */
+$viewModel = $block->getViewModel();
+?>
+<div id="<?= $block->getHtmlId() ?>"
+     data-mage-init='{"magenableOpenAIAgentiCommerceGenerationProgress":{
+            "url": "<?= $escaper->escapeUrl($block->getAjaxUrl()) ?>",
+            "elementId": "<?= $block->getHtmlId() ?>",
+            "generationIsRunning": <?= $escaper->escapeHtml($viewModel->generationIsRunning()) ?>,
+            "successText": "<?= $escaper->escapeHtml(__('Feed files generated successfully!')) ?>"}}'>
+    <h5 style="display:inline-block;margin-bottom:0;"><?= $escaper->escapeHtml(__('Generation progress:')) ?></h5>
+    <b id="<?= $block->getHtmlId() ?>_spinner" style="display:inline-block;width:12px;"></b>
+    <b id="<?= $block->getHtmlId() ?>_result"></b>
+</div>

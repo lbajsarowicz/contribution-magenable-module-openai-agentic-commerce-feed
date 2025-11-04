@@ -1,0 +1,30 @@
+{
+    "name": "magenable/module-openai-agentic-commerce-feed",
+    "description": "This Magento 2 module provides the ability to generate feed files for OpenAI Agentic Commerce",
+    "require": {
+        "magento/framework": ">=102.0",
+        "magenable/module-base": "*"
+    },
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Magenable",
+            "homepage": "https://magenable.com.au"
+        }
+    ],
+    "keywords": [
+        "magento 2 openai agentic commerce",
+        "agentic commerce",
+        "openai agentic commerce"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Magenable\\OpenAIAgenticCommerceFeed\\": ""
+        }
+    }
+}

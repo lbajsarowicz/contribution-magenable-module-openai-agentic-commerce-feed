@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="magenableOpenAIAgenticCommerceGenerateFeed"
+                      xsi:type="object">Magenable\OpenAIAgenticCommerceFeed\Console\Command\GenerateFeed</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magenable\OpenAIAgenticCommerceFeed\Model\ProductAttributeProcessor">
+        <arguments>
+            <argument name="processors" xsi:type="array">
+                <item name="status"
+                      xsi:type="object">Magenable\OpenAIAgenticCommerceFeed\Model\ProductAttributeProcessors\Status</item>
+                <item name="url_key"
+                      xsi:type="object">Magenable\OpenAIAgenticCommerceFeed\Model\ProductAttributeProcessors\UrlKey</item>
+                <item name="image"
+                      xsi:type="object">Magenable\OpenAIAgenticCommerceFeed\Model\ProductAttributeProcessors\Image</item>
+                <item name="price"
+                      xsi:type="object">Magenable\OpenAIAgenticCommerceFeed\Model\ProductAttributeProcessors\Price</item>
+                <item name="quantity_and_stock_status"
+                      xsi:type="object">Magenable\OpenAIAgenticCommerceFeed\Model\ProductAttributeProcessors\QuantityAndStockStatus</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magenable\OpenAIAgenticCommerceFeed\Model\FileSaver">
+        <arguments>
+            <argument name="fileSavers" xsi:type="array">
+                <item name="xml"
+                      xsi:type="object">Magenable\OpenAIAgenticCommerceFeed\Model\FileSavers\Xml</item>
+                <item name="json"
+                      xsi:type="object">Magenable\OpenAIAgenticCommerceFeed\Model\FileSavers\Json</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

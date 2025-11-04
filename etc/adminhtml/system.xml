@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="magenable_openai_agentic_commerce_feed" translate="label" type="text" sortOrder="100"
+                 showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>OpenAI Agentic Commerce Feed</label>
+            <tab>magenable</tab>
+            <resource>Magenable_OpenAIAgenticCommerceFeed::configuration</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>General</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0"
+                       showInStore="0" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="cron_schedule" translate="label" type="select" sortOrder="20" showInDefault="1"
+                       showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Cron Schedule</label>
+                    <source_model>Magenable\OpenAIAgenticCommerceFeed\Model\Config\Source\CronFrequency</source_model>
+                    <depends>
+                        <field id="magenable_openai_agentic_commerce_feed/general/enabled">1</field>
+                    </depends>
+                </field>
+                <field id="file_format" translate="label" type="select" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>File Format</label>
+                    <source_model>Magenable\OpenAIAgenticCommerceFeed\Model\Config\Source\FileFormats</source_model>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="generate_feed_files" translate="button_label" sortOrder="40" showInDefault="1"
+                       showInWebsite="0" showInStore="1">
+                    <label/>
+                    <button_label>Generate Feed Files</button_label>
+                    <frontend_model>Magenable\OpenAIAgenticCommerceFeed\Block\Adminhtml\System\Config\GenerateFeedFiles</frontend_model>
+                    <comment><![CDATA[<b>Note:</b> before generating the feed click the Save button to save all the changed settings]]></comment>
+                </field>
+                <field id="generation_progress" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>Magenable\OpenAIAgenticCommerceFeed\Block\Adminhtml\System\Config\GenerationProgress</frontend_model>
+                </field>
+                <field id="last_generation_date" sortOrder="60" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label/>
+                    <frontend_model>Magenable\OpenAIAgenticCommerceFeed\Block\Adminhtml\System\Config\LastGenerationDate</frontend_model>
+                </field>
+                <field id="feed_files" sortOrder="70" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label/>
+                    <frontend_model>Magenable\OpenAIAgenticCommerceFeed\Block\Adminhtml\System\Config\FeedFiles</frontend_model>
+                </field>
+                <field id="remove_feed_files" translate="button_label" sortOrder="80" showInDefault="1"
+                       showInWebsite="0" showInStore="1">
+                    <label/>
+                    <button_label>Remove Feed Files</button_label>
+                    <frontend_model>Magenable\OpenAIAgenticCommerceFeed\Block\Adminhtml\System\Config\RemoveFeedFiles</frontend_model>
+                </field>
+                <field id="attributes_mapping" translate="label" sortOrder="90" showInDefault="1" showInWebsite="1"
+                       showInStore="1" canRestore="1">
+                    <label>Attributes Mapping</label>
+                    <frontend_model>Magenable\OpenAIAgenticCommerceFeed\Block\Adminhtml\Form\Field\AttributesMapping</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                    <comment><![CDATA[Mapping between OpenAI Agentic Commerce feed attributes and website attributes.
+                        <br>Feed Spec: <a href="https://developers.openai.com/commerce/specs/feed" target="_blank">
+                            https://developers.openai.com/commerce/specs/feed</a>]]></comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

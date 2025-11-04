@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="admin">
+        <route id="magenable_openai_agentic_commerce_feed" frontName="magenable-openai-agentic-commerce-feed">
+            <module name="Magenable_OpenAIAgenticCommerceFeed"/>
+        </route>
+    </router>
+</config>

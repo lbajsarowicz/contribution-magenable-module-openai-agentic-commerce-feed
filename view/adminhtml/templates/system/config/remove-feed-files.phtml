@@ -1,0 +1,13 @@
+<?php
+/** @var \Magenable\OpenAIAgenticCommerceFeed\Block\Adminhtml\System\Config\RemoveFeedFiles $block */
+/** @var \Magento\Framework\Escaper $escaper */
+?>
+<button class="scalable" type="button" id="<?= $block->getHtmlId() ?>"
+        data-mage-init='{"magenableOpenAIAgentiCommerceRemoveFeedFiles":{
+            "url": "<?= $escaper->escapeUrl($block->getAjaxUrl()) ?>",
+            "elementId": "<?= $block->getHtmlId() ?>",
+            "successText": "<?= $escaper->escapeHtmlAttr(__('Feed files removed successfully!')) ?>",
+            "failedText": "<?= $escaper->escapeHtmlAttr(__('Removing failed! Try again?')) ?>",
+            "fieldMapping": "<?= /* @noEscape */ $block->getFieldMapping() ?>"}, "validation": {}}'>
+    <span id="<?= $block->getHtmlId() ?>_result"><?= $escaper->escapeHtml($block->getButtonLabel()) ?></span>
+</button>

@@ -1,0 +1,13 @@
+<?php
+/** @var \Magenable\OpenAIAgenticCommerceFeed\Block\Adminhtml\System\Config\GenerateFeedFiles $block */
+/** @var \Magento\Framework\Escaper $escaper */
+?>
+<button class="scalable" type="button" id="<?= $block->getHtmlId() ?>"
+        data-mage-init='{"magenableOpenAIAgentiCommerceGenerateFeedFiles":{
+            "url": "<?= $escaper->escapeUrl($block->getAjaxUrl()) ?>",
+            "elementId": "<?= $block->getHtmlId() ?>",
+            "successText": "<?= $escaper->escapeHtmlAttr(__('Feed generation process successfully started!')) ?>",
+            "failedText": "<?= $escaper->escapeHtmlAttr(__('Generation failed! Try again?')) ?>",
+            "fieldMapping": "<?= /* @noEscape */ $block->getFieldMapping() ?>"}, "validation": {}}'>
+    <span id="<?= $block->getHtmlId() ?>_result"><?= $escaper->escapeHtml($block->getButtonLabel()) ?></span>
+</button>

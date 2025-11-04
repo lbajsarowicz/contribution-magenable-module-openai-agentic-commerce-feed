@@ -1,0 +1,10 @@
+<?php
+/** @var \Magenable\OpenAIAgenticCommerceFeed\Block\Adminhtml\System\Config\LastGenerationDate $block */
+/** @var \Magento\Framework\Escaper $escaper */
+/** @var \Magenable\OpenAIAgenticCommerceFeed\ViewModel\LastGenerationDate $viewModel */
+$viewModel = $block->getViewModel();
+?>
+<div id="<?= $block->getHtmlId() ?>">
+    <h5 style="display: inline-block;margin-bottom: 0;"><?= $escaper->escapeHtml(__('Last generation date:')) ?></h5>
+    <b><?= $escaper->escapeHtml($viewModel->getDate()) ?></b>
+</div>
