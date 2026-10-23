@@ -43,7 +43,7 @@ Go to **Stores** > **Settings** > **Configuration** > **Magenable Extensions** >
 ![](README/1.png)
 
 #### Compatibility
-Tested with Magento Open Source 2.4.4 - 2.4.9, but will probably work with older Magento 2.X versions and Adobe Commerce
+Tested with Magento Open Source 2.4.4 – 2.4.10, but will probably work with older Magento 2.X versions and Adobe Commerce
 
 #### About developer
 The extension is developed by Magenable (https://magenable.com.au), eCommerce consultancy specializing in Magento/Adobe Commerce based in Melbourne, Australia
