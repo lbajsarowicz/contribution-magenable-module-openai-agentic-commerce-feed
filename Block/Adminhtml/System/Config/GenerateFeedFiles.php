@@ -11,6 +11,13 @@ use Magento\Framework\Data\Form\Element\AbstractElement;
 
 class GenerateFeedFiles extends Field
 {
+    /**
+     * Initialize the configuration field template.
+     *
+     * @param Context $context
+     * @param array $data
+     * @param SecureHtmlRenderer|null $secureRenderer
+     */
     public function __construct(
         Context $context,
         array $data = [],
@@ -20,6 +27,9 @@ class GenerateFeedFiles extends Field
         parent::__construct($context, $data, $secureRenderer);
     }
 
+    /**
+     * @inheritdoc
+     */
     public function render(AbstractElement $element)
     {
         $element = clone $element;
@@ -27,6 +37,9 @@ class GenerateFeedFiles extends Field
         return parent::render($element);
     }
 
+    /**
+     * @inheritdoc
+     */
     protected function _getElementHtml(AbstractElement $element): string
     {
         $originalData = $element->getOriginalData();
@@ -44,6 +57,11 @@ class GenerateFeedFiles extends Field
         return $this->_toHtml();
     }
 
+    /**
+     * Return the configuration fields sent with the feed request.
+     *
+     * @return array
+     */
     protected function _getFieldMapping()
     {
         return [

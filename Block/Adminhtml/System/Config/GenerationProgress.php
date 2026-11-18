@@ -12,8 +12,19 @@ use Magento\Framework\Data\Form\Element\AbstractElement;
 
 class GenerationProgress extends Field
 {
+    /**
+     * @var GenerationProgressViewModel
+     */
     private GenerationProgressViewModel $viewModel;
 
+    /**
+     * Initialize the configuration field template.
+     *
+     * @param Context $context
+     * @param GenerationProgressViewModel $viewModel
+     * @param array $data
+     * @param SecureHtmlRenderer|null $secureRenderer
+     */
     public function __construct(
         Context $context,
         GenerationProgressViewModel $viewModel,
@@ -25,6 +36,9 @@ class GenerationProgress extends Field
         $this->viewModel = $viewModel;
     }
 
+    /**
+     * @inheritdoc
+     */
     public function render(AbstractElement $element)
     {
         $element = clone $element;
@@ -32,11 +46,19 @@ class GenerationProgress extends Field
         return parent::render($element);
     }
 
+    /**
+     * Return the configuration field view model.
+     *
+     * @return GenerationProgressViewModel
+     */
     public function getViewModel(): GenerationProgressViewModel
     {
         return $this->viewModel;
     }
 
+    /**
+     * @inheritdoc
+     */
     protected function _getElementHtml(AbstractElement $element): string
     {
         $this->addData(

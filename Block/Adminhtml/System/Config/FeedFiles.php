@@ -12,8 +12,19 @@ use Magento\Framework\Data\Form\Element\AbstractElement;
 
 class FeedFiles extends Field
 {
+    /**
+     * @var FeedFilesViewModel
+     */
     private FeedFilesViewModel $viewModel;
 
+    /**
+     * Initialize the configuration field template.
+     *
+     * @param Context $context
+     * @param FeedFilesViewModel $viewModel
+     * @param array $data
+     * @param SecureHtmlRenderer|null $secureRenderer
+     */
     public function __construct(
         Context $context,
         FeedFilesViewModel $viewModel,
@@ -25,6 +36,9 @@ class FeedFiles extends Field
         $this->viewModel = $viewModel;
     }
 
+    /**
+     * @inheritdoc
+     */
     protected function _prepareLayout()
     {
         if (!$this->viewModel->getFiles()) {
@@ -34,6 +48,9 @@ class FeedFiles extends Field
         return $this;
     }
 
+    /**
+     * @inheritdoc
+     */
     public function render(AbstractElement $element)
     {
         if (!$this->viewModel->getFiles()) {
@@ -44,11 +61,19 @@ class FeedFiles extends Field
         return parent::render($element);
     }
 
+    /**
+     * Return the configuration field view model.
+     *
+     * @return FeedFilesViewModel
+     */
     public function getViewModel(): FeedFilesViewModel
     {
         return $this->viewModel;
     }
 
+    /**
+     * @inheritdoc
+     */
     protected function _getElementHtml(AbstractElement $element): string
     {
         $this->addData(
