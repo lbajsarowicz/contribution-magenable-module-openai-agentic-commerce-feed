@@ -5,15 +5,19 @@ declare(strict_types=1);
 namespace Magenable\OpenAIAgenticCommerceFeed\Block\Adminhtml\System\Config;
 
 use Magento\Config\Block\System\Config\Form\Field;
+use Magento\Backend\Block\Template\Context;
+use Magento\Framework\View\Helper\SecureHtmlRenderer;
 use Magento\Framework\Data\Form\Element\AbstractElement;
 
 class GenerateFeedFiles extends Field
 {
-    protected function _prepareLayout()
-    {
-        parent::_prepareLayout();
-        $this->setTemplate('Magenable_OpenAIAgenticCommerceFeed::system/config/generate-feed-files.phtml');
-        return $this;
+    public function __construct(
+        Context $context,
+        array $data = [],
+        ?SecureHtmlRenderer $secureRenderer = null
+    ) {
+        $data['template'] = 'Magenable_OpenAIAgenticCommerceFeed::system/config/generate-feed-files.phtml';
+        parent::__construct($context, $data, $secureRenderer);
     }
 
     public function render(AbstractElement $element)

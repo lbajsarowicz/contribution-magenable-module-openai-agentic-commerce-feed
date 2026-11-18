@@ -20,6 +20,7 @@ class FeedFiles extends Field
         array $data = [],
         ?SecureHtmlRenderer $secureRenderer = null
     ) {
+        $data['template'] = 'Magenable_OpenAIAgenticCommerceFeed::system/config/feed-files.phtml';
         parent::__construct($context, $data, $secureRenderer);
         $this->viewModel = $viewModel;
     }
@@ -30,7 +31,6 @@ class FeedFiles extends Field
             return $this;
         }
         parent::_prepareLayout();
-        $this->setTemplate('Magenable_OpenAIAgenticCommerceFeed::system/config/feed-files.phtml');
         return $this;
     }
 

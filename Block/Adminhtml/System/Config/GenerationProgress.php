@@ -20,15 +20,9 @@ class GenerationProgress extends Field
         array $data = [],
         ?SecureHtmlRenderer $secureRenderer = null
     ) {
+        $data['template'] = 'Magenable_OpenAIAgenticCommerceFeed::system/config/generation-progress.phtml';
         parent::__construct($context, $data, $secureRenderer);
         $this->viewModel = $viewModel;
-    }
-
-    protected function _prepareLayout()
-    {
-        parent::_prepareLayout();
-        $this->setTemplate('Magenable_OpenAIAgenticCommerceFeed::system/config/generation-progress.phtml');
-        return $this;
     }
 
     public function render(AbstractElement $element)

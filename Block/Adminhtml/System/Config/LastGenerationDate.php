@@ -20,6 +20,7 @@ class LastGenerationDate extends Field
         array $data = [],
         ?SecureHtmlRenderer $secureRenderer = null
     ) {
+        $data['template'] = 'Magenable_OpenAIAgenticCommerceFeed::system/config/last-generation-date.phtml';
         parent::__construct($context, $data, $secureRenderer);
         $this->viewModel = $viewModel;
     }
@@ -30,7 +31,6 @@ class LastGenerationDate extends Field
             return $this;
         }
         parent::_prepareLayout();
-        $this->setTemplate('Magenable_OpenAIAgenticCommerceFeed::system/config/last-generation-date.phtml');
         return $this;
     }
 
